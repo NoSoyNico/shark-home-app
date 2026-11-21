@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Prototipo 0.1: app NORMAL (categoría LAUNCHER), todavía NO es HOME.
+     No reemplaza el launcher de BYD; se abre como cualquier app. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="mx.nico.sharkhome">
+
+    <!-- Clima (internet) y velocidad/rumbo (GPS). Nada de permisos del vehículo. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Solo para la prueba de diagnóstico de cámara (CamTest); se revoca después. -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- Lee el estado del vehículo del log del sistema (como Electro). Solo lectura. Se otorga con pm grant. -->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <!-- Para el modo "Fotos para mostrar": leer las imágenes de /sdcard/SharkHome/fotos. Se otorga con pm grant. -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- NOTA (8 nov 2026): se probó leer datos del vehículo (batería/rango/llantas/puertas/luces).
+         Todas las vías (getters Y registro de eventos) exigen permisos BYDAUTO_*_GET de nivel
+         'signature' (solo apps firmadas por BYD). Los *_COMMON (dangerous) NO alcanzan ni para
+         registrarse a eventos, y correr como 'shell' tampoco lo salta. No es posible desde una app
+         normal en esta unidad; por eso aquí no se piden esos permisos. Ver BydLink.java (inerte). -->
+
+    <!-- allowBackup=false: la cuenta de BYD guardada no sale en un respaldo por ADB. -->
+    <application
+        android:allowBackup="false"
+        android:requestLegacyExternalStorage="true"
+        android:label="Shark Home"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:hardwareAccelerated="true"
+        android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:resizeableActivity="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- HOME va en un alias APAGADO al instalar: así el instalador de archivos de BYD la trata
+             como app normal. Se enciende desde Configuración > "Poner como launcher por defecto". -->
+        <activity-alias
+            android:name=".HomeAlias"
+            android:targetActivity=".MainActivity"
+            android:enabled="false"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity-alias>
+        <!-- Solo para poder ver "qué está sonando"; no lee notificaciones. -->
+        <service
+            android:name=".MediaListener"
+            android:exported="true"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

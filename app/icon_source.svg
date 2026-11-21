@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="432" height="432" viewBox="0 0 432 432">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#20242B"/>
+      <stop offset="1" stop-color="#0E1013"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#C3C9B6"/>
+      <stop offset="1" stop-color="#9AA288"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="432" height="432" rx="96" fill="url(#bg)"/>
+  <!-- sombra -->
+  <ellipse cx="216" cy="300" rx="150" ry="16" fill="#000000" opacity="0.28"/>
+  <!-- carroceria pickup (vista lateral) -->
+  <path d="M70,258 L70,230 L96,220 L188,216 L206,170 L214,166 L280,166 L298,216 L362,216 L362,258 Z" fill="url(#body)"/>
+  <!-- ventanas -->
+  <path d="M212,176 L276,176 L290,212 L212,212 Z" fill="#2B313A"/>
+  <rect x="241" y="176" width="5" height="36" fill="#9AA288"/>
+  <!-- faro -->
+  <rect x="72" y="232" width="10" height="9" rx="2" fill="#EAF1FF"/>
+  <!-- llantas -->
+  <circle cx="132" cy="262" r="34" fill="#0E0F11"/>
+  <circle cx="132" cy="262" r="15" fill="#6B7078"/>
+  <circle cx="132" cy="262" r="6" fill="#20242B"/>
+  <circle cx="306" cy="262" r="34" fill="#0E0F11"/>
+  <circle cx="306" cy="262" r="15" fill="#6B7078"/>
+  <circle cx="306" cy="262" r="6" fill="#20242B"/>
+  <!-- firma sutil -->
+  <text x="216" y="360" text-anchor="middle" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="30" font-weight="600" fill="#8A8D93" opacity="0.7">by:BioNiico</text>
+</svg>

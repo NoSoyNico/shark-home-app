@@ -1,0 +1,17 @@
+Shark Home - avisos de terceros
+================================
+
+Shark Home es software libre bajo la licencia GNU GPL v3 (ver LICENSE en el repositorio).
+
+Se cargan desde internet en el mapa (no van dentro del APK):
+- Leaflet 1.9.4 (BSD-2-Clause)
+- MapLibre GL JS 1.15.3 (BSD-3-Clause)
+- maplibre-gl-leaflet 0.0.17 (ISC)
+
+Datos y servicios:
+- Mapas (c) OpenStreetMap contributors (ODbL). OpenTopoMap (CC-BY-SA). OpenFreeMap / OpenMapTiles.
+- Clima: Open-Meteo. Busqueda: Nominatim (OSM). Rutas: OSRM.
+
+El modelo 3D del vehiculo NO viene en el APK: se lee en tiempo de ejecucion de la app de camara 360
+que ya trae cada vehiculo BYD. BYD, DiLink y Shark son marcas de sus duenos.
+La idea de las capas Topo/Vector se tomo de SharkOS-CE (GPL-3.0); no se copio su codigo.

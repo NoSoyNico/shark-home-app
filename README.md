@@ -1,9 +1,13 @@
 # 🦈 Shark Home
 
+[![Licencia: GPL-3.0](https://img.shields.io/badge/licencia-GPL--3.0-D4E53A?labelColor=1F1E27)](LICENSE)
+[![Descargar](https://img.shields.io/github/v/release/NoSoyNico/shark-home-app?label=descargar&color=D4E53A&labelColor=1F1E27)](https://github.com/NoSoyNico/shark-home-app/releases/latest)
+
 **Pantalla de inicio (launcher) para la BYD Shark mexicana** — mapa en vivo, la troca en 3D, reloj con clima por
 horas, efectos de clima y tu música, todo en una sola pantalla.
 
-> ⚠️ Proyecto personal, **no afiliado ni respaldado por BYD**. Úsalo bajo tu propio riesgo y configúralo **estacionado**.
+> ⚠️ Proyecto personal y de código abierto, **no afiliado ni respaldado por BYD**. Úsalo bajo tu propio riesgo y
+> configúralo **estacionado**. Lee el [aviso](DISCLAIMER.md).
 > Solo **lee** datos; no cambia nada del vehículo.
 
 ## ⬇️ Descargar
@@ -42,6 +46,26 @@ Probada en **BYD Shark México**, DiLink 3.0 (Android 10). En otros modelos o fi
 
 **Para actualizar**, instala la versión nueva encima: no se pierden tus ajustes.
 **Para quitarla**, desinstálala desde la lista de apps; el launcher de BYD sigue ahí.
+
+## 🧑‍💻 Código abierto: adáptalo a tu BYD
+
+Shark Home es **software libre** bajo la licencia [GPL-3.0](LICENSE): puedes usarlo, estudiarlo, modificarlo
+y compartirlo. Si publicas tu versión, también tienes que compartir su código.
+
+- **Código**: carpeta [`app/`](app) (Java, sin Gradle). Se compila con `app/build.sh`.
+- **Cómo aportar**: [CONTRIBUTING.md](CONTRIBUTING.md), con las reglas de seguridad (solo lectura, nada de
+  ADAS, CAN ni firmware) y cómo compilarlo.
+- **¿Tienes otro BYD?** Las adaptaciones a Song, Seal, Dolphin, Atto 3 y demás son bienvenidas.
+  [Reporta fallas o propone ideas](https://github.com/NoSoyNico/shark-home-app/issues/new/choose).
+
+| Archivo | Qué hace |
+|---|---|
+| `MainActivity.java` | Pantalla principal: paneles, mapa, dock y ajustes |
+| `Truck3DView.java` | Modelo 3D (lo lee de la app de cámara 360 del vehículo) |
+| `WeatherFx.java` | Efectos de clima |
+| `LiveInfo.java` | GPS, clima (Open-Meteo) y música |
+| `VehicleLog.java` | Puertas y luces leídas del registro del sistema |
+| `AdbClient.java` | Se da sus propios permisos por el ADB local, sin computadora |
 
 ## 🙋 Dudas y sugerencias
 
