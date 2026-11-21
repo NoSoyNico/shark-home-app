@@ -24,7 +24,7 @@ Probada en **BYD Shark México**, DiLink 3.0 (Android 10). En otros modelos o fi
   tormenta y estrellas de noche. Se pueden apagar o cambiar la densidad.
 - **Música**: lo que suena (Spotify, radio, Media Center) con controles, y **letras** sincronizadas.
 - **Puertas y luces** en vivo (leídas del registro del sistema).
-- **Marco de fotos**: el panel derecho puede mostrar tus fotos en lugar del mapa.
+- **Marco de fotos**: el panel derecho puede mostrar tus fotos (carpeta `SharkHome/fotos` de la memoria interna) en lugar del mapa.
 - Accesos rápidos: **360°**, Mapas, Música, Radio, Spotify, Cámaras y más.
 - Tema **claro u oscuro**.
 
